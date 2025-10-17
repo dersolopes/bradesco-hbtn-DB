@@ -30,4 +30,8 @@ public class Telefone implements Serializable {
     public Long getId() {return id;}
     public String getNumero() {return numero;}
     public String getDDD() {return DDD;}
+
+    //setters
+    public void setAluno(Aluno aluno) {this.aluno = aluno;}
+
 }

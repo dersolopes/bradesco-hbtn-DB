@@ -23,8 +23,7 @@ public class Aluno implements Serializable {
     @OneToMany(mappedBy = "aluno", cascade = CascadeType.ALL)
     protected List<Telefone> telefones;
 
-    @ManyToOne
-    @JoinColumn(name = "curso_id")
+    @ManyToOne @JoinColumn(name = "curso_id")
     protected Curso curso;
 
     //empt constructor
@@ -44,5 +43,10 @@ public class Aluno implements Serializable {
     public String getMatricula() {return matricula;}
     public Date getNascimento() {return nascimento;}
     public String getEmail() {return email;}
+
+    //setters
+    public void setEnderecos(List<Endereco> enderecos) {this.enderecos = enderecos;}
+    public void setTelefones(List<Telefone> telefones) {this.telefones = telefones;}
+    public void setCurso(Curso curso) {this.curso = curso;}
 
 }

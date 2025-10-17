@@ -20,18 +20,18 @@ public class Endereco implements Serializable {
     private Aluno aluno;
 
 
-    //empt constructor
+    //Construtor vazio
     public Endereco() {}
 
-    //complete constructor
+    //Construtor com parametros e utilizando setters
     public Endereco(String logradouro, String endereco, String numero, String bairro, String cidade, String estado, Integer cep) {
-        this.logradouro = logradouro;
-        this.endereco = endereco;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.cep = cep;
+        setLogradouro(logradouro);
+        setEndereco(endereco);
+        setNumero(numero);
+        setBairro(bairro);
+        setCidade(cidade);
+        setEstado(estado);
+        setCep(cep);
     }
 
     //getters
@@ -43,5 +43,15 @@ public class Endereco implements Serializable {
     public String getCidade() {return cidade;}
     public String getEstado() {return estado;}
     public Integer getCep() {return cep;}
+
+    //setters
+    public void setLogradouro(String logradouro) {this.logradouro = logradouro;}
+    public void setEndereco(String endereco) {this.endereco = endereco;}
+    public void setNumero(String numero) {this.numero = numero;}
+    public void setBairro(String bairro) {this.bairro = bairro;}
+    public void setCidade(String cidade) {this.cidade = cidade;}
+    public void setEstado(String estado) {this.estado = estado;}
+    public void setCep(Integer cep) {this.cep=cep;}
+    public void setAluno(Aluno aluno) {this.aluno = aluno;}
 
 }

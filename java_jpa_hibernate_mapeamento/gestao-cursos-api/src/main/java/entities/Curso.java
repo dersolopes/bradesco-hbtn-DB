@@ -19,7 +19,7 @@ public class Curso implements Serializable {
     MaterialCurso materialCurso;
 
     @ManyToOne @JoinColumn(name = "professor_id")
-    private Professor professor;
+    protected Professor professor;
 
     @OneToMany (mappedBy = "aluno", cascade = CascadeType.ALL)
     protected List<Aluno> alunos;
@@ -37,5 +37,10 @@ public class Curso implements Serializable {
     public Long getId() {return id;}
     public String getNome() {return nome;}
     public String getSigla() {return sigla;}
+
+    //setters
+    public void setProfessor(Professor professor) {this.professor = professor;}
+    public void setMaterialCurso(MaterialCurso materialCurso){this.materialCurso = materialCurso;}
+    public void setAlunos(List<Aluno> alunos) {this.alunos = alunos;}
 
 }

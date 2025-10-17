@@ -16,6 +16,7 @@ public class Professor implements Serializable{
     protected String matricula;
     protected String email;
 
+
     @OneToMany (mappedBy = "professor", cascade = CascadeType.ALL)
     protected List <Curso> cursos;
 
@@ -23,7 +24,7 @@ public class Professor implements Serializable{
     public Professor() {}
 
     //complete constructor
-    public Professor(String nome,String matricula, Date nascimento, String email) {
+    public Professor(String nome,String matricula, String email) {
         this.nomeCompleto = nome;
         this.matricula = matricula;
         this.email = email;
@@ -34,5 +35,9 @@ public class Professor implements Serializable{
     public String getNomeCompleto() {return nomeCompleto;}
     public String getMatricula() {return matricula;}
     public String getEmail() {return email;}
+
+    //setters
+    public void setCursos(List<Curso> cursos) {this.cursos = cursos;}
+
 
 }
